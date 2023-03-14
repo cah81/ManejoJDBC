@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="run" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="test.TestMySqlJDBC" />
+    <option name="MAIN_CLASS_NAME" value="test.TestManejoPersonas" />
     <module name="i" />
     <method v="2">
       <option name="Make" enabled="true" />

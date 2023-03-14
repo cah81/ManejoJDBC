@@ -12,7 +12,7 @@ import java.util.List;
 public class PersonaDao {
     private static final String SQL_SELECT = "SELECT id_persona,nombre,apellido,email,telefono FROM persona";
 
-    public List<Persona> seleccionar() throws SQLException {
+    public List<Persona> seleccionar()  {
         //definimos variables que vamos a usar
         Connection conn = null;
         PreparedStatement instruccionSQL = null;
@@ -36,10 +36,13 @@ public class PersonaDao {
             ex.printStackTrace(System.out);
         }
         finally {
-            Conexion.close(rs);
-            Conexion.close(instruccionSQL);
-            Conexion.close(conn);
-
+            try{
+                Conexion.close(rs);
+                Conexion.close(instruccionSQL);
+                Conexion.close(conn);
+            }catch (SQLException ex){
+                ex.printStackTrace();
+            }
         }
             return  personas;
     }
